@@ -133,6 +133,10 @@ public class Store {
 			System.out.print("Telefonun ekran boyutunu giriniz: ");
 			double screenSize = scan.nextDouble();
 			
+			System.out.print("Telefonun batarya gücünü giriniz: ");
+			int bateryPower = scan.nextInt();
+			
+			
 			System.out.print("Telefonun ram'ini giriniz: ");
 			int ram = scan.nextInt();
 			
@@ -140,7 +144,7 @@ public class Store {
 			String color = scan.next();
 			
 			Product newProduct = new MobilePhone(deviceName,id,productName, unitPrice,brandName
-					, discountRate, amountOfStock,ram,storage, screenSize,  color);
+					, discountRate, amountOfStock,bateryPower ,ram,storage, screenSize,  color);
 			products.add(newProduct);
 			return true;
 		 
@@ -167,21 +171,21 @@ public class Store {
 	
 	public void listMobilePhone() {
 		System.out.println("\nCep Telefonu Listesi\n");
-		System.out.println("---------------------------------------------------------------------------------------------------------------");
-		System.out.println("| ID | Urun Adi                      | Fiyat     | Marka     | Depolama  | Ekran     | RAM       | Renk      |");
-		System.out.println("---------------------------------------------------------------------------------------------------------------");
+		System.out.println("--------------------------------------------------------------------------------------------------------------------------");
+		System.out.println("| ID | Urun Adi                      | Fiyat     | Marka     | Depolama  | Ekran     | Batarya   | RAM       | Renk      |");
+		System.out.println("--------------------------------------------------------------------------------------------------------------------------");
 		
 			for(int i = 0; i < products.size(); i++) {
 				if(products.get(i).getDeviceName()== "MobilePhone") {
 					MobilePhone mobilePhone = (MobilePhone) products.get(i);
-					System.out.format("| %-3d| %-30s| %-10.1f| %-10s| %-10d| %-10.1f| %-10d| %-10s|\n",
+					System.out.format("| %-3d| %-30s| %-10.1f| %-10s| %-10d| %-10.1f| %-10d| %-10d| %-10s|\n",
 							mobilePhone.getId(),mobilePhone.getProductName(),mobilePhone.getUnitPrice(),
 							mobilePhone.getBrandName().getName(),mobilePhone.getStorage(),mobilePhone.getScreenSize(),
-							mobilePhone.getRam(),mobilePhone.getColor());
+							mobilePhone.getBateryPower(),mobilePhone.getRam(),mobilePhone.getColor());
 				}
 			}
 		
-		System.out.println("---------------------------------------------------------------------------------------------------------------");
+		System.out.println("--------------------------------------------------------------------------------------------------------------------------");
 	}
 	
 	public void listNotebook() {

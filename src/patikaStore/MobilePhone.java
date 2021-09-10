@@ -3,14 +3,16 @@ package patikaStore;
 public class MobilePhone extends Product{
 	private int ram;
 	private int storage;
+	private int bateryPower;
 	private double screenSize;
 	private String color;
 
 	public MobilePhone(String deviceName, int id, String productName, double unitPrice, Brand brandName,
-			int discountRate, int amountOfStock, int ram, int storage, double screenSize, String color) {
+			int discountRate, int amountOfStock,int bateryPower, int ram, int storage, double screenSize, String color) {
 		super(deviceName, id, productName, unitPrice, brandName, discountRate, amountOfStock);
 		this.ram = ram;
 		this.storage = storage;
+		this.bateryPower=bateryPower;
 		this.screenSize = screenSize;
 		this.color = color;
 	}
@@ -38,5 +40,12 @@ public class MobilePhone extends Product{
 	public void setColor(String color) {
 		this.color = color;
 	}
+	public int getBateryPower() {
+		return bateryPower;
+	}
+	public void setBateryPower(int bateryPower) {
+		this.bateryPower = bateryPower;
+	}
+	
 	
 }
